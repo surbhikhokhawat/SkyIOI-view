@@ -25,53 +25,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_theme_file_uri();?>/assets/css/global.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/assets/css/style.scss" type="text/css" />
+  <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/assets/css/style.css.map" type="text/css" />
   <?php wp_head(); ?>
 </head>
 <!-- section first begins here  -->
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
-  <section class="first-section dark" id="first-section">
-    <div class="container h-100-per">
-      <div class="row align-items-center justify-content-center h-100-per">
-        <div class="col-12 text-center logo">
-          <?php 
-         $home_page_id = 7;  //Page ID
-         $home_page_data = get_page( $home_page_id ); 
-         $title = $home_page_data->post_title; 
-         $content = apply_filters('the_content', $home_page_data->post_content);
-        ?>
-        <?php $logo = get_field('logo'); ?>
-        <img class="logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
-          <h1><?php the_field('title', $home_page_id); ?></h1>
-        </div>
-        <div class="unique-navbar">
-          <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav m-auto">
-                  <li class="nav-item">
-                    <a class="nav-link scrollto" href="#about-section">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link scrollto" href="#how-it-works">How It Works?</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link scrollto" href="#the-product">The Product</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link scrollto" href="#contactus">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
+   <!-- Navbar -->
+   <nav class="navbar_header">
+    <div class="brand_logo"><a href="#"><span style="color: #2492b6;">SKY</span><span
+          style="color: #b81a12;">IOI</span></a></div>
+    <ul>
+      <li><a href="#">Race Categories</a></li>
+      <li><a href="#">Sponsor & Partnership</a></li>
+      <li><a href="#">Find us on Social</a></li>
+      <li><a href="#">Contact us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Topbar header -->
+  <div class="topbar_header">
+
+  </div>
   <!-- section first ends here  -->

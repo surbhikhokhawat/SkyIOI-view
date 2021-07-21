@@ -1,441 +1,110 @@
-/* ---------------------- section-first CSS Starts Here ------------------------- */
-.first-section {
-  position: relative;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  margin-bottom: 50px;
+body {
+  overflow-x: hidden;
 }
 
-
-.first-section h1 {
-  font-size: 27px;
-  color: #E5E5E5;
-  font-weight: 500;
-}
-
-.unique-navbar {
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  background: #000;
-}
-
-.unique-navbar.fixed-top {
-  position: fixed !important;
-  bottom: auto;
-  top: 0;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.unique-navbar nav li {
-  margin-right: 30px;
-  border-bottom: 2px solid #6AEDB2;
-}
-
-.unique-navbar nav li:last-child {
-  margin-right: 0;
-}
-
-.unique-navbar nav li a {
-  color: #fff !important;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 0 !important;
-  padding-bottom: 3px !important;
-}
-
-.unique-navbar nav li a.active {
-  color: #6AEDB2 !important;
-}
-
-/* ---------------------- section-first CSS Ends Here ------------------------- */
-
-/* ---------------------- section-second CSS Starts Here ------------------------- */
-.about-section h2 {
-  margin-bottom: 24px;
-}
-
-.about-section-parts img {
-  margin-bottom: 24px;
-}
-
-.part-2 h2 {
-  width: 290px;
-}
-
-/* ---------------------- section-second CSS Ends Here ------------------------- */
-
-/* ---------------------- section-third CSS Starts Here ------------------------- */
-.second-section h2 {
-  line-height: 40px;
-  margin-bottom: 20px;
-}
-
-.second-section p {
-  font-weight: 400;
-  max-width: 360px;
-}
-
-.second-section img {
-  height: 55vh;
-}
-
-@media (max-width: 767px) {
-  .second-section img {
-    margin-top: 100px;
-  }  
-  .how-it-works-section-box,.product-features{
-    margin-bottom: 60px;
-  }
-  .contactUs-section{
-    padding: 100px 0px !important;
-  }
-  .contactUs-wrapper{
-    text-align: center;
-  }
-}
-
-@media (max-width: 1025px) {
-  .second-section img {
-    height:auto;
-    width: 100%;
-  }  
-}
-
-
-/* ---------------------- section-third CSS Ends Here ------------------------- */
-
-/* ---------------------- section-fourth CSS Starts Here ------------------------- */
-section.how-it-works-section h2 {
-  margin-bottom: 17px;
-}
-
-section.how-it-works-section .how-it-works-section-box h2 {
-  font-size: 30px;
-}
-
-section.how-it-works-section img {
-  height: 80px;
-  margin-bottom: 40px;
-}
-
-/* ---------------------- section-fourth CSS Ends Here ------------------------- */
-
-/* ---------------------- section-fifth CSS Starts Here ------------------------- */
-.useCase-section h2 {
-  margin-bottom: 90px;
-}
-
-.useCase-section h3 {
-  font-size: 30px;
-  font-weight: 700;
-  padding-left: 24px;
-  position: relative;
-}
-
-.useCase-section h3:before {
-  content: '';
-  counter-increment: section;
-  content: counter(section) ". ";
-  position: absolute;
-  font-size: 20px;
-  left: 0;
-  top: 5px;
-}
-
-/* ---------------------- section-fifth CSS Ends Here ------------------------- */
-
-/* ---------------------- section-sixth CSS Starts Here ------------------------- */
-.The-Product-section h2 {
-  margin-bottom: 17px;
-}
-
-.The-Product-section-items h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #070707;
-  margin-bottom: 17px;
-}
-
-.The-Product-section-items {
-  margin-bottom: 60px;
-}
-
-.The-Product-section-items:last-child {
-  margin-bottom: 0;
-}
-
-.The-Product-section-items p {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  color: #070707;
-}
-
-/* ---------------------- section-sixth CSS Ends Here ------------------------- */
-
-/* ---------------------- section-seventh CSS Starts Here ------------------------- */
-.contactUs-section {
-  height: auto;
-  padding: 200px 0;
-}
-
-.contactUS-section h2 {
-  margin-bottom: 35px;
-}
-
-.contact-h-tag{
-  margin-bottom: 35px;
-}
-
-/* ---------------------- section-seventh CSS Ends Here ------------------------- */
-
-/* ----------------------final footer section starts here------------------------- */
-footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-}
-
-.copywrite {
-  border-top: solid 1px #fff;
+nav.navbar_header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  z-index: 999;
+}
+nav.navbar_header .brand_logo a {
+  color: #242424;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav.navbar_header ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+nav.navbar_header ul li {
+  margin: 0 10px;
+}
+nav.navbar_header ul li a {
+  color: #747474;
   font-size: 14px;
   font-weight: 500;
+  text-decoration: none;
+}
+nav.navbar_header ul li a:hover {
+  color: #242424;
 }
 
-.contactUs-button{
-  margin-bottom: 35px;
-}
-
-/* final footer section starts here  */
-
-/* ---------------------- Modal Start Here ------------------------- */
-.modal h2 {
-  font-size: 45px;
-  font-weight: 700;
-  color: #070707;
-  letter-spacing: -1px;
-  margin-bottom: 18px;
-}
-
-.modal .modal-body {
-  padding: 50px;
-}
-
-.modal label {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.modal .btn-close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-.modal input {
+.topbar_header {
+  background: url("https://images.pexels.com/photos/3929946/pexels-photo-3929946.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
-  padding: 13px 17px;
-  outline: none;
-  box-shadow: none;
+  height: 80vh;
 }
 
-.modal input:focus {
-  box-shadow: none;
+.container_heading {
+  padding-bottom: 20px;
+}
+.container_heading h5 {
+  font-weight: 700;
+  color: #202020;
 }
 
-.modal button {
-  outline: none;
+.slide_control_btn {
+  background: #b81a12;
+  padding: 5px;
+  border-radius: 100%;
 }
 
-.modal button:focus {
-  box-shadow: none;
+.carousel-control-next, .carousel-control-prev {
+  width: 0 !important;
 }
 
-.modal button.submit,.modal button.wpcf7-submit {
-  background: #070707;
-  color: #fff;
+.sponsor h5.title {
   font-size: 16px;
-  font-weight: 500;
-  border: none;
-  padding: 16px 53px;
-  border-radius: 5px;
+  font-weight: 600;
+  color: #383c3e;
 }
-.wpcf7-submit.submit{
-  background: #070707;
+.sponsor img.brand_logo {
+  width: 100px;
+}
+
+footer {
+  background: #002a3d;
+  width: 100%;
+}
+
+form {
   color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  padding: 16px 53px;
-  border-radius: 5px;
-  width: 39%;
+}
+form input {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+form input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
 }
 
-.modal .modal-dialog {
-  max-width: 600px;
-}
-
-/* ---------------------- Modal End Here ------------------------- */
-
-/* ---------------------- Responsive Start Here ------------------------- */
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1220px;
-  }
-}
-
-@media (max-width: 991px) {
-  section h2 {
-    font-size: 30px;
-  }
-
-  section p {
-    font-size: 18px;
-    line-height: 25px;
-  }
-
-  .collapse:not(.show) {
-    display: block !important;
-  }
-
-  .unique-navbar ul.navbar-nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  section.first-section .unique-navbar.fixed-top {
-    position: absolute !important;
-  }
-
-  section.about-section .about-section-parts.part-2 h2 {
-    width: 250px;
-  }
-
-  section.How-It-Works-section img {
-    height: auto;
-    width: 100%;
-  }
-
-  section.useCase-section h3 {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 767px) {
-
-  section.first-section .unique-navbar,
-  section.first-section .unique-navbar.fixed-top {
-    position: relative !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    transform: none !important;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin-top: 20px;
-  }
-
-  .unique-navbar ul.navbar-nav {
-    flex-direction: column !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .unique-navbar ul li {
-    margin-right: 0 !important;
-    margin-bottom: 20px;
-    ;
-  }
-
-  section.first-section .logo {
-    margin-top: 0;
-  }
-
-  section {
-    height: auto;
-    padding: 100px 0;
-  }
-
-
-  .about-section-parts {
-    margin-bottom: 60px;
-  }
-
-  section.about-section h2 {
-    margin-bottom: 14px;
-  }
-
-  section.How-It-Works-section img {
-    margin-top: 100px;
-  }
-
-  .The-Product {
-    height: auto;
-    padding: 100px 0;
-  }
-
-  .The-Product-box {
-    margin-bottom: 60px;
-  }
-
-  section.The-Product img {
-    margin-bottom: 30px;
-  }
-
-  section.useCase-section h3 {
-    margin-bottom: 45px;
-  }
-
-  section.useCase-section h3:before {
-    top: 0;
-  }
-
-  section.useCase-section h3 br {
-    display: none;
-  }
-
-  .The-Product-section .product-features {
-    margin-bottom: 60px;
-  }
-
-  .The-Product-section-items img {
-    margin-bottom: 20px;
-  }
-
-  section.contact {
-    padding: 100px 0;
-    text-align: center;
-  }
-
-  section.contact h2 {
-    font-size: 28px;
-    margin-bottom: 35px;
-  }
-
-  section.contact .button {
-    font-size: 20px;
-  }
-
-  .footer-logo {
-    margin: 0 auto;
-    margin-top: 70px;
-  }
-
-  footer .copywrite {
-    line-height: 23px;
-  }
-
-  .modal .modal-body {
-    padding: 40px;
-  }
-}
-
-/* ---------------------- Responsive End Here ------------------------- */
-
-
-
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */
