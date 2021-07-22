@@ -10,86 +10,83 @@
 ?>
 <!-- section second begins here  -->
 <body>
-  <section style="background: #fafafa;padding: 80px 0;">
+  <section class="race-category-slider-section">
     <div class="container">
       <div class="container_heading">
         <h5>Race Categories</h5>
-      </div>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://cdn.pixabay.com/photo/2021/05/08/11/24/city-6238228_960_720.jpg" class="d-block w-100"
-              alt="..." style="height: 50vh;object-fit: cover;">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn.pixabay.com/photo/2021/05/08/11/24/city-6238228_960_720.jpg" class="d-block w-100"
-              alt="..." style="height: 50vh;object-fit: cover;">
-          </div>
-          <div class="carousel-item">
-            <img src="https://cdn.pixabay.com/photo/2021/05/08/11/24/city-6238228_960_720.jpg" class="d-block w-100"
-              alt="..." style="height: 50vh;object-fit: cover;">
-          </div>
+        <div class="smart-slider">
+          <?php
+            echo do_shortcode('[smartslider3 slider="2"]');
+          ?>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev">
-          <span class="slide_control_btn" aria-hidden="true"><img
-              src="assets/images/icons/outline_arrow_back_ios_white_24dp.png" alt=""></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-          data-bs-slide="next">
-          <span class="slide_control_btn" aria-hidden="true"><img
-              src="assets/images/icons/arrow_forward_ios_white_24dp.svg" alt=""></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
   </section>
 
   <section style="background: #fafafa;padding: 80px 0;">
     <div class="container">
+    <?php 
+          $Sponsors_and_Parternship_page_id =21;  //Page ID
+          $Sponsors_and_Parternship_page_data = get_page( $Sponsors_and_Parternship_page_id ); 
+          ?>
       <div class="container_heading">
-        <h5>Sponsors and Partnership</h5>
+      <h5><?php the_field('sponsors_heading', $Sponsors_and_Parternship_page_id); ?></h5>
       </div>
     </div>
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-        <div class="col sponsor">
-          <h5 class="title">Title Sponsor</h5>
-          <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c513.png" alt="" class="brand_logo">
-        </div>
-        <div class="col sponsor">
-          <h5 class="title">Title Sponsor</h5>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png"
-            alt="" class="brand_logo">
-        </div>
-        <div class="col sponsor">
-          <h5 class="title">Title Sponsor</h5>
-          <img src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c51f.png" alt="" class="brand_logo">
-        </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+          <?php
+        $i=1;
+          if(have_rows('sponsors_content', $Sponsors_and_Parternship_page_id) ):?>
+              <?php while(have_rows('sponsors_content', $Sponsors_and_Parternship_page_id)): the_row(); ?>
+            <div class="The-Product-section-items">             
+              <div class="row align-items-center">
+                <div class="col sponsor">
+                <h5 class="mb-5 title"><?php the_sub_field('sponsors_title');?></h5>
+                  <?php $Sponsors_logo = get_sub_field('sponsors_logo'); ?>
+                  <img src="<?php echo $Sponsors_logo['url']; ?>" alt="<?php echo $Sponsors_logo['alt']; ?>" />  
+                </div>
+              </div>
+            </div>
+            <?php 
+              $i++;
+              endwhile;
+            endif;
+            ?> 
       </div>
     </div>
     <div class="container mt-5">
+    <?php 
+          $find_Us_on_Social_Page_id = 33;  //Page ID
+          $find_Us_on_Social_Page_data = get_page( $find_Us_on_Social_Page_id ); 
+          ?>
       <div class="container_heading">
-        <h5>Find us on Social</h5>
+      <h5><?php the_field('social_title', $find_Us_on_Social_Page_id ); ?></h5>
       </div>
     </div>
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6">
-        <div class="col sponsor">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
-            alt="" width="30px">
+      <div class="d-flex">
+      <?php 
+     $i=1;
+          if(have_rows('social_content', $find_Us_on_Social_Page_id) ):?>
+              <?php while(have_rows('social_content', $find_Us_on_Social_Page_id)): the_row(); ?>
+                <div class="sponsor">
+                <?php $social_logo = get_sub_field('social_logo'); ?>
+                <a href="<?php echo get_sub_field('social_links'); ?>"><img src="<?php echo $social_logo['url']; ?>" /></a>
+                </div>
+            <?php 
+              $i++;
+              endwhile;
+            endif;
+            ?> 
+
+      </div>
+       
         </div>
-        <div class="col sponsor">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png"
-            alt="" width="30px">
-        </div>
+            </div>
+          </div> 
       </div>
     </div>
-
   </section>
 
 
@@ -98,39 +95,32 @@
   <footer>
     <div class="container py-5">
       <div class="row">
-        <div class="col-12 col-lg-4">
+      <?php 
+          $Query_Form_id = 51;  //Page ID
+          $Query_Form_data = get_page( $Query_Form_id ); 
+          ?>
+        <div class="col-12 col-lg-6">
           <form>
             <div class="container_heading">
               <h5 class="text-white">Have a query?</h5>
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control py-3" id="name" placeholder="Enter your name">
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control py-3" id="email" placeholder="Enter your email">
-            </div>
-            <div class="mb-3">
-              <input type="number" class="form-control py-3" id="email" placeholder="Add your phone number">
-            </div>
-            <div class="mb-3">
-              <textarea placeholder="Your message" class="form-control" id="message" rows="4"></textarea>
-            </div>
-           
-            <button type="submit" class="btn btn-danger w-100 py-3">Submit</button>
+              <?php 
+               echo do_shortcode('[contact-form-7 id="8" title="Contact form 1"]');
+              ?>
+        </div>
           </form>
         </div>
-        <div class="col-12 col-lg-4"></div>
-        <div class="col-12 col-lg-4 pt-5">
-          <div class="container_heading">
+        <div class="col-12 col-lg-3"></div>
+        <div class="col-12 col-lg-3 pt-5 align-self-center footer-content">
+          <div class="ReachUs-heading">
             <h5 class="text-white">Reach us at:</h5>
           </div>
           <div>
-            <p><a class="text-decoration-none" style="color: #7e99a6;font-size: 14px;" href="mailto:hello@landify.com">hello@landify.com</a></p>
-            <p><a class="text-decoration-none" style="color: #7e99a6;font-size: 14px;" href="tel:+91 9876543210">+91 9876543210</a></p>
-            <p class="" style="color: #7e99a6;font-size: 14px;">772 Lyonwood Ave <br> Walnut, CA 91789</p>
+            <p class="ReachUs-content"><a class="text-decoration-none" style="color: #7e99a6;font-size: 14px;" href="mailto: info@sky101.in "> info@sky101.in </a></p>
+            <p class="ReachUs-content"><a class="text-decoration-none" style="color: #7e99a6;font-size: 14px;" href="tel:1800-103-9747">1800-103-9747</a></p>
           </div>
         </div>
       </div>
+      <p class="credits mt-5">© 2021 Sky101 · Designed & Developed by Spark Eighteen</p>
     </div>
   </footer>
 
