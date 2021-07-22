@@ -44,7 +44,7 @@
                 <div class="col sponsor">
                 <h5 class="mb-5 title"><?php the_sub_field('sponsors_title');?></h5>
                   <?php $Sponsors_logo = get_sub_field('sponsors_logo'); ?>
-                  <img src="<?php echo $Sponsors_logo['url']; ?>" alt="<?php echo $Sponsors_logo['alt']; ?>" />  
+                  <img class="mb-md-0 mb-5" src="<?php echo $Sponsors_logo['url']; ?>" alt="<?php echo $Sponsors_logo['alt']; ?>" />  
                 </div>
               </div>
             </div>
